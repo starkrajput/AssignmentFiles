@@ -1,0 +1,184 @@
+1.
+We need inheritance when we want to use independent class method and their features to a another class so that we dont need to write code again, 
+basically it give code reusabality. it is also reduces code complexity and makes easier to call methods based on specific requirement and need.
+
+
+Advanatages of inheritance  are 
+a) data are kept private using protected keyword meaning it provide security to our code.
+b) it helps in code reuasablity.
+c) it helps to over write methods and give user required output and functionlity.
+d) makes code easier and less complex.
+
+
+
+
+2.
+the type of inheritance with real life examples are 
+a) Singlelevel inheritance.
+   Ex. SmartPhones and its another model but with more features. [SmartPhones -> SmartPhones2.0]
+b) Multilevel inheritance.
+   Ex. Java and its further updation till date.
+c) Hierahical inheritance.
+   Ex. Manager and its subordinate employee.
+d) Hybrid inheritance.
+   Ex. Internet network system.
+
+
+
+
+
+3.
+The types of relationships with examples are 
+a) Is a relationships : When two objects or classes are connected outerly. It is implemented via Inheritance.
+   Ex. 
+   class Animal{
+     int legs;
+     int hands;
+     String commonFeatures;
+   }
+   class wolf extends Animal{
+      void howling(){
+          System.out.println("Howling");
+      }
+   }
+
+ 
+
+b) Has a relationships : When two objects or classes are containe within another.It is implemented via Aggregation.
+   Ex.
+   class Address{
+   int pin;
+   int code;
+  int state;
+  Address(){  
+  }
+  }
+
+  class Person{
+    int age;
+    String name;
+    Address add;
+    Person(){
+    }
+    add = new Address();
+  }
+
+
+
+
+
+
+
+
+4.
+No the code will not be successfully compiled because there is more then one public class and for each file there must be a singel public class 
+belonging to that particular file.
+
+Yes if we do correct oure code by removing the public keywork except to main class like shown below :
+
+package Tut;
+
+ class L {
+int x = 20;
+}
+ class K extends L {
+int x = 30;
+}
+public class River {
+public static void main(String[] args)
+{
+K b = new K();
+System.out.println(b.x);
+L a = new L();
+System.out.println(a.x);
+L a2 = new K();
+System.out.println(a2.x);
+}
+}
+
+
+then we will get the following output :
+30
+20
+20
+
+
+
+
+5.
+No the code will not get successfully compiled. The code will show a error that variable which is declared private will not be visible. but for
+variable y it is declared protected and will be avaibale throughout the in same package and subclasses.
+
+ 
+package Tut;
+
+class AA
+{
+private int x = 50;
+protected int y = 100;
+int z = 200;
+}
+
+ class BB extends AA {
+}
+//import pack2.B;
+public class River {
+public static void main(String[] args)
+{
+BB b = new BB();
+System.out.println(b.x);  // Here in this we trying to access private member which is accesible only throughout the class it declared.
+System.out.println(b.y);
+System.out.println(b.z);
+}
+}
+
+
+
+
+6.
+
+Composition : It is a special form of Agrregation [when objects are contained within another objects]. Actually here the two objects cannot exist without 
+another objects, hence objects are dependent on each other here. It is Has a relationship. It is implemented using Inner/Nested classes.
+
+Inheritance : Here we have some shared behaviour of independent objects. Here extends keyword is used for inheriting one class to another.
+It is a IS A relationship. it used to access feature, method and other attributes of class to another class.
+
+
+
+
+7.
+method hiding in Java is features of inheritance where parent class methods and subclass child method with same method name and parameteres are there,
+if that method is called then subclass method will give its respective output not the parent class method it method will get hide.
+Example :
+  
+package Tut;
+class AA
+{
+void show() {
+	System.out.println("CLass AA method call.");
+}
+}
+
+class BB extends AA {
+	 void show() {
+			System.out.println("CLass BB method call.");
+		}
+}
+
+public class River {
+public static void main(String[] args)
+{
+  
+ AA obj1 = new BB();
+ obj1.show();
+}
+}
+
+
+
+
+
+8.
+To call a method of a subclass, if we are holding an object of the subclass in a reference variable of type superclass by intialising the 
+constructor to that particular class objects. We can have parent or child sublclass reference by to
+call our respective method we can do that by creating or initialsing the constrcutor of that  class whose method we want to call. 

@@ -1,0 +1,465 @@
+
+
+1.
+
+Shape Class declaration :
+package ShapeHier;
+
+
+
+	abstract class Shape{
+		public Shape(String shapeName) {
+			super();
+			this.shapeName = shapeName;
+		}
+		
+		String shapeName ;
+		abstract double area(int radius);
+		
+		abstract double areac(int radius,int height);
+		
+		abstract double arear(int length,int breadth);
+		@Override
+		public String toString() {
+			return "Shape [shapeName=" + shapeName + "]";
+		}	
+	}
+	
+	
+	class Sphere extends Shape{
+		final double PI = 3.14;
+	    
+		public Sphere(String shapeName) {
+			super(shapeName);
+			// TODO Auto-generated constructor stub
+		}
+//		 .
+		@Override
+		double area(int radius) {
+			return 4*PI*(Math.pow(radius, 2));
+		}
+@Override
+double areac(int radius, int height) {
+	// TODO Auto-generated method stub
+	return 0;
+}
+@Override
+double arear(int length, int breadth) {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+
+	}
+	
+	
+	
+	
+	class Cylinder extends Shape{
+		final double PI = 3.14;
+		
+		public Cylinder(String shapeName) {
+			super(shapeName);
+			// TODO Auto-generated constructor stub
+		}
+
+		@Override
+		double areac(int radius,int height) {
+			// TODO Auto-generated method stub
+			return PI*(Math.pow(radius, 2))*height;
+		}
+
+		@Override
+		double area(int radius) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+		@Override
+		double arear(int length, int breadth) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+		
+	} 
+	
+	
+	
+	class Rectangle extends Shape {
+		   double  length =2;
+		   double breadth =4; 
+			public Rectangle(String shapeName) {
+				super(shapeName);
+				// TODO Auto-generated constructor stub
+			}
+
+			@Override
+			double arear(int length,int breadth) {
+				// TODO Auto-generated method stub
+				return length*breadth;
+			}
+
+			@Override
+			double area(int radius) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+
+			@Override
+			double areac(int radius, int height) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+		}
+
+
+
+Paint Class declaration :
+ package ShapeHier;
+
+import java.util.*;
+
+ class Paint {
+	  double methodtocompute(int coverage,double area){
+		  return (area/coverage);
+	  }		 
+}
+
+
+
+PaintThings declaration :
+package ShapeHier;
+
+import java.util.*;
+
+public class PaintThings {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		  int coverage = sc.nextInt();	  
+		  Shape s1 = new Cylinder("Cylinder");
+		  int radius = sc.nextInt();
+		  int height = sc.nextInt();
+		  double area = s1.areac(radius, height);
+		  Paint st = new Paint();
+		  double amount = st.methodtocompute(coverage, area);
+		  System.out.println("Amount will be  " + amount );
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+2.Yes the program is weiiten correctly and result values will be stored 20235
+
+
+abstract class Calculate{
+	abstract int add(int a,int b);
+}
+
+
+public class River {
+public static void main(String[] args)
+{
+	int result = new Calculate() {
+		int add(int a,int b) {
+			return a+b;
+		}
+	}.add(11010, 022011);
+	
+	System.out.println(result);
+}
+}
+
+Output : 
+20235
+
+
+
+
+
+
+3.
+public class River {
+public static void main(String[] args)
+{
+	try {
+		System.out.println("Calculate "+":"+ 1/0);
+	}catch(ArithmeticException e) {
+		System.out.println("Exception division be zero ");
+	}
+}
+}
+
+Output :
+Exception division be zero 
+
+
+
+
+
+4.
+package Tut;
+
+import java.util.*;
+
+
+abstract class Book{
+	String title;
+	abstract void setTitle(String s);
+	String getTitle() {
+		return title;
+	}
+}
+
+
+class SherlockHolmes extends Book{
+
+	@Override
+	void setTitle(String s) {
+		this.title = s;
+	}
+	String getTitle() {
+		return title;
+	}
+	
+}
+
+
+public class River {
+public static void main(String[] args)
+{
+	SherlockHolmes sh1 = new SherlockHolmes();
+	sh1.setTitle("Sherlock_Holmes");
+	System.out.println(sh1.getTitle());
+}
+}
+
+
+
+
+
+5.
+package Tut;
+
+import java.util.*;
+
+
+abstract class Animals{
+	
+	abstract void cats();
+	abstract void dogs();
+}
+
+
+class Cats extends Animals{
+
+	@Override
+	void cats() {
+		// TODO Auto-generated method stub
+		System.out.println("Cats meow");
+	}
+
+	@Override
+	void dogs() {
+		// TODO Auto-generated method stub
+		
+	}	
+}
+
+
+
+class Dogs extends Animals{
+
+	@Override
+	void cats() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	void dogs() {
+		// TODO Auto-generated method stub
+		System.out.println("Doga Bark");
+	}
+	
+}
+
+
+
+public class River {
+public static void main(String[] args)
+{
+	Cats c = new Cats();
+	c.cats();
+	
+	Dogs d = new Dogs();
+	d.dogs();
+}
+}
+
+
+
+
+
+
+6.
+
+package Tut;
+
+import java.util.*;
+
+
+abstract class Marks{
+	
+
+	abstract double getPercentage(int subj1, int subj2, int subj3);
+
+	abstract double getPercentage(int subj1, int subj2, int subj3, int subj4);
+	
+		
+		
+}
+
+
+class A extends Marks{
+
+	@Override
+	double getPercentage(int subj1,int subj2,int subj3) {
+		// TODO Auto-generated method stub
+		return (subj1+subj2+subj3)/300*100;
+	}
+
+	@Override
+	double getPercentage(int subj1, int subj2, int subj3, int subj4) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
+}
+
+
+
+class B extends Marks{
+
+	@Override
+	
+    
+	double getPercentage(int subj1,int subj2,int subj3,int subj4) {
+		// TODO Auto-generated method stub
+		return (subj1+subj2+subj3+subj4)/400*100;
+	}
+
+	@Override
+	double getPercentage(int subj1, int subj2, int subj3) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
+}
+
+
+
+public class River {
+public static void main(String[] args)
+{
+	A a1 = new A();
+	System.out.println(a1.getPercentage(98, 90, 80));
+	
+	B b1 = new B();
+	System.out.println(((90+80+88+80)/400)*100);
+}
+}
+
+
+
+
+
+
+7.
+interface A {
+void m1();
+}
+public class B implements A {
+  void m1(){
+System.out.println("One");
+}
+}
+
+
+Here the error is method m1 will be public because without public keyword its visibility will
+be limilted to A interface only, in order ot overide it im public class there will be public keyowrd 
+with void m1 method.
+
+
+
+
+8.
+interface A {
+int x = 10;
+void m1();
+}
+public class B implements A {
+int x = 20;
+public void m1(){
+System.out.println("One");
+}
+
+
+
+}
+public class Rabbit {
+public static void main(String[] args){
+A a = new B();
+a.m1();
+System.out.println(a.x);
+}
+}
+
+There will be error as there are two classes with public keyword so in order to get value we will remove one public keyword as followed.
+
+package Tut;
+
+
+interface A {
+int x = 10;
+void m1();
+}
+ class U implements A {
+int x = 20;
+public void m1(){
+System.out.println("One");
+}
+
+
+
+}
+public class Rabbit {
+public static void main(String[] args){
+A a = new U();
+a.m1();
+System.out.println(a.x);
+}
+}
+
+
+
+Output :
+ One
+ 10
+
+
+
+

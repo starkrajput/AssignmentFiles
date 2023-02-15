@@ -1,0 +1,195 @@
+1.
+public class River {
+public static void main(String[] args)
+{
+	Scanner sc = new Scanner(System.in);
+	int l = sc.nextInt();
+	int b = sc.nextInt();
+	if(l==b) {
+		System.out.println("The given values is of Square.");
+	}else {
+		System.out.println("Not a value of square.");
+	}
+}
+}
+
+
+
+2.
+public class River {
+public static void main(String[] args)
+{
+	Scanner sc = new Scanner(System.in);
+	int quantity = sc.nextInt();
+	int costUnit = 100;
+	if(quantity<1000) {
+		System.out.println("The Price is : " + (costUnit * quantity));
+	}else {
+		costUnit = 90;
+		System.out.println("The Price is : " + (costUnit * quantity));
+	}
+}
+}
+
+
+
+3.
+public class River {
+public static void main(String[] args)
+{
+	Scanner sc = new Scanner(System.in);
+	int sal = sc.nextInt();
+	int serYear = sc.nextInt();
+	if(serYear>5) {
+		System.out.println("The Bonus is : " + (sal*0.05));
+	}else {
+		
+		System.out.println("The Bonus is : " + 0 );
+	}
+}
+}
+
+
+
+
+4.
+public class River {
+public static void main(String[] args)
+{
+	Scanner sc = new Scanner(System.in);
+	double Numberofclassesheld =sc.nextInt();
+	double Numberofclassesattended = sc.nextInt();
+	
+	
+	if(( Numberofclassesattended/Numberofclassesheld) >= 0.75) {
+		System.out.println("The Student is allowed to sit  ");
+	}else {
+		
+		System.out.println(" The Student is Not allowed to sit"  );
+	}
+}
+}
+
+
+5.
+public class River {
+public static void main(String[] args)
+{
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter marks of subject1 ");
+	double subject1 =sc.nextInt();
+	System.out.println("Enter marks of subject2 ");
+	double subject2 = sc.nextInt();
+	System.out.println("Enter marks of subject3 ");
+	double subject3 = sc.nextInt();
+	
+	
+	if((subject1>=33 && ((subject1+subject2+subject3)/300 > 0.4))  &&  (subject2>=33 && ((subject1+subject2+subject3)/300 > 0.4)) && (subject1>=33 && ((subject1+subject2+subject3)/300 > 0.4)) ) {
+		System.out.println("The Student is Passed. ");
+	}else {
+		
+		System.out.println(" The Student is Not Passed."  );
+	}
+}
+}
+
+
+
+
+
+
+6.
+public class River {
+public static void main(String[] args)
+{
+	Scanner sc = new Scanner(System.in);
+	
+	int n =sc.nextInt();
+	int sum=0;
+	for(int i=0;i<=n;i++) {
+		System.out.println(i);
+		sum+=i;
+	}
+	System.out.println("Sum is "+sum);
+}
+}
+
+
+
+
+
+
+7.
+public class River {
+public static void main(String[] args)
+{
+	Scanner sc = new Scanner(System.in);
+	
+	int n1 =sc.nextInt();
+	int n2 =sc.nextInt();
+	int n3 =sc.nextInt();
+	int n4 =sc.nextInt();
+	int n5 =sc.nextInt();
+	int sum=n1+n2+n3+n4+n5;
+	int avg=sum/2;
+	System.out.println("The Average is : " + avg);
+	System.out.println("The Sum is "+sum);
+}
+}
+
+
+
+
+8.
+public class River {
+public static void main(String[] args)
+{
+	Scanner sc = new Scanner(System.in);
+	
+	int n =sc.nextInt();
+	
+	System.out.println("The Cube is "+ (int)Math.pow(n, 3));
+}
+}
+
+
+
+
+9.
+public class River {
+public static void main(String[] args)
+{
+	Scanner sc = new Scanner(System.in);
+	
+	int n =sc.nextInt();
+	
+	for(int i=1;i<=10;i++) {
+		System.out.println(n+" * "+ i + " = "+(n*i));
+	}
+}
+}
+
+
+
+
+10.
+  public class River {
+public static void main(String[] args)
+{
+	Scanner sc = new Scanner(System.in);
+	int n = sc.nextInt();
+	   int star=1;
+	   int count=1;
+	   for(int i=0;i<n;i++) {
+		   for(int j=0;j<star;j++) {
+			   
+				   System.out.print(count+" ");
+				   count++;  
+		   }
+	       star++;
+	      
+	       System.out.println();
+	   }
+	  
+}
+}

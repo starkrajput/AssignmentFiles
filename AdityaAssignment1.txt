@@ -1,0 +1,253 @@
+1. 
+The first language which was built to create Formula was FORTRAN but it has limited datatypes and case conditions. then for business related work the first language 
+was COBOL but it has same limitations too. After that C a POP[Procedure based programming] based language was built which has certain advanatges over the previous 
+languages but this language was Rigid and does not support any changes. Further C++ was developed which was combination of POP and OOPs [Object oriented Programming 
+Structered] but it was Platform dependent language. In order to overcome these challenges and to provide a Language which is platform independent Java was developed. 
+In 1992 there was project name Green Project which aims to give tele-communication services but it need a language that can run on any platform. To develop such thing
+James gosling took 4 year and in 1995 he came with a Language Java (Oak) which then further integrated with 1992 http that is web services and other desktop apps 
+making it one of the most versatile and robust language. After year by year certain updation is done in order to improve java and its Library. Java was released in 
+the series of four which is Java SE(Standard edition), Java EE(enterprise edition) and Java ME(Micro edition).
+
+
+
+
+2.
+Java code passes through two process Compilation and interpretation. In compilation phase, java compiler that is javac is used to convert high level language to low
+level language which generates intermediate code [a.java -> javac -> a.class] which is also called byte code and contains special characters. Now in interpretation 
+phase this intermediate code is processed via JVM[Java Virtual Machine] which has process of Class Loader then byte code verification for security purpose. then JRE
+[Java Runtime Environment] is used to give results and java need just JRE to have platform independency.
+ 
+JVM : It stands for Java Virtual Machine. It is the most crucial part for Code processing which works with JDK and JRE. After the compilation, .class file which is 
+intermediate code is further processes for Class Loader and byte code verification which is done by JVM only. the intermediate code is read line by line for 
+interpreatation.
+
+JDK : It stands for Java development kit. It contains JRE and other development tools for Java Program. It contains all essesential part which is required for Java 
+program  which is javac, JVM and other parts.
+
+JRE : It stands for Java Runtime Environment. It is used along with JVM and other library tools which is used for Java Program. Basically is provide environment to 
+run Java Program. Also, JRE alone can run Jave code.
+
+
+
+
+3. 
+Java is portable because when Java compiler that is javac convert the java file like a.java into a.class file which is intermediate code, this intemediate code can be
+run anywhere and on any system, it just need java interpreater for the code to run. further the code is examine for byte code verification that is the code is 
+following the rules and the code is right. java bytecode can be run on any platform or system which is a essential feature of Java. That's why java is portable.
+
+
+
+
+4.
+Platform independent : When a code is written in any language that code of that language should run on other platforms and systems. The code functionality or its
+logic should not vary with machines and other system structure. It should follow write once use anywhere format. Example : Jave is platform independent as its javac 
+generates a intermediate code that can be used on any system or platform. this byte code is further processed for Class Laoder and byte code verification process.
+
+Platform dependent : When a code is written is a language that code of that language are not able to run on other system or require some changes or modification in 
+either system, platform or code itself. It requires machine and system structure variation. Here, every time different code or different system are needed for code to
+execute.
+Example : C++ is platform dependent as it code are either modified or system/machines are changes for the code to run.
+
+
+
+
+5.
+Compilation : It is first step for Jave Code processing, java compiler that is javac is used to convert source code that is a.java file into intermediate code also 
+called byte code which is a.class file. this intermediate code is independent and can run on any platform.
+
+Interpretation : It is second step for java Code processing, here JVM performs its function in which the intermediate code i.e byte code is further processed for 
+Class Loader and byte code verification where code is checked for rules and whether the code is right.
+
+For performance, compilation phase is faster than interpreatation as compilataion need less steps and javac just need to convert the source code to intermediate code.
+but on other side interpreatation takes more steps and it need to check the code again if similar process occurs again. Hence compilation is more performance rich than 
+interpretation.
+
+
+
+
+6.
+Backward Compatibility is basically a updatation process that is whenever certain advancements and feature addition is done on any language or system, it should
+support and have interlinked advancement to previous versions systems. The language or system that are designed currently should be made in such a manner so that it 
+corporates with other preiously designed systems and other correlated versions.
+Example : like if lambda 8 is devoloped then it should support Thread which was a previous version designed if it follows backward compatibility.
+
+Yes Java support Backward Compatibility.     
+
+
+
+
+7.
+Float  : It is decimal datatypes which has a floating deicmal system. It has 32 bit memory size. With float we use f literal to let know Java that datatype is Float 
+not double.
+Double : It is also decimal datatypes but it has precised decimal system. It has double precision system than Float. It has 64 bit memory size. Here we use d literal. 
+
+
+
+8.
+Operator that Java supports are :
+Assignment operator.
+Ternary Operator.
+Arithmatic operator.
+Logical operator.
+Bitwise operator.
+
+
+
+9.
+
+class number{
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      int a = sc.nextInt();
+      if(a<0){
+          System.out.println("Number is Negative");
+      }else if(a==0){
+          System.out.println("Number is Zero");
+      }else{
+          System.out.println("Number is Positive");
+      }
+    }
+}
+
+
+
+
+
+
+
+10.
+
+class usingConditionOperatormaxofThreeNumber{
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      int a = sc.nextInt();
+      int b = sc.nextInt();
+      int c = sc.nextInt();
+      int max = (a>b)? ((a>c)?a:c):((b>c)?b:c);
+      System.out.println(max);
+    }
+}
+
+
+
+
+
+
+
+
+11.
+
+class simpleInterest {
+    public static void main(String[] args){
+     Scanner sc = new Scanner(System.in);
+     System.out.println("Enter value of P");
+     int a = sc.nextInt();
+      System.out.println("Enter value of R");
+     int b = sc.nextInt();
+      System.out.println("Enter value of T");
+     int c = sc.nextInt();
+      float si = (a*b*c)/100;
+      System.out.println("Simple interest is "+si);
+     }
+}
+
+
+
+
+
+
+
+
+12.
+
+class numberIsDivisbleOrNot{
+    public static void main(String[] args) {    
+     Scanner sc = new Scanner(System.in);
+     int a = sc.nextInt();
+     if(a%5==0 && a%11==0){
+           System.out.println("Number is divisible with either 5 or 11");
+     }else{
+           System.out.println("Number is not divisble");
+     }
+    }
+}
+
+
+
+
+
+
+13.
+
+class characterisdigit {
+    public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
+     int a = sc.nextChar();
+     if((a>='a' && a<='z') || (a>='A' && a<='Z' )){
+         System.out.println("Character is a Aplhabet.");
+     }else if(a>='0' || a<='9'){
+         System.out.println("Character is a digit.");
+     }else{
+         System.out.println("Character is Special character.");
+     }
+    }
+}
+
+
+
+
+
+14.
+
+class profitLoss {
+    public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
+     int cp = sc.nextInt();
+     int sp = sc.nextInt();
+     if(sp-cp>0){
+        System.out.println("Profit");
+     }else{
+         System.out.println("Loss");
+     }
+    }
+}
+
+
+
+
+
+
+15.
+
+class primeNumberCount {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int s = sc.nextInt();
+        int count=0;
+        for(int i=1;i<=s;i++){
+            if(isPrime(i)){
+                count+=i;
+            }
+        }
+        System.out.println(count);
+    }
+    
+    public static boolean isPrime(int a){
+        for(int i=2;i*i<a;i++){
+            if(a%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+
+
+
+
+
+ 
+
+
+    

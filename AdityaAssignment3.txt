@@ -1,0 +1,586 @@
+1.
+
+this keyword as return type :
+
+class A{
+	B ob;
+	A(){
+		ob = new B().returnObject();
+		ob.shown();
+	}
+}
+
+class B{
+	  B returnObject() {
+		return this;
+	}
+	
+	void shown() {
+		System.out.println("Class B method called !");
+	}
+}
+public class Turtle {
+	public static void main(String[] args) {
+        A1 obj1 = new A1();
+	    } 
+	}
+
+
+
+
+------------------
+this keyword as argument type :
+
+class A1{
+	B ob;
+	A1(){
+		ob = new B().returnobject();
+		ob.display();
+	}
+}
+
+class B{
+	  B returnobject() {
+		return this;
+	}
+	
+	void display() {
+		System.out.println("Class B method called as Argument!");
+	}
+}
+
+
+
+public class Turtle {
+	public static void main(String[] args) {
+        A1 obj1 = new A1();
+	    } 
+	}
+
+
+
+
+
+
+
+
+2.
+
+
+class Person{
+     String name;
+     int age;
+     String hobby;
+	public Person(String name, int age, String hobby) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.hobby = hobby;
+	}
+     void getValueFromThis() {
+    	 System.out.println("Name: "+this.name+" Ageis "+this.age+"and Hobby is"+this.hobby);
+     }
+     
+     void getValueFromObject() {
+    	 System.out.println("Name: "+name+"Age is "+age+"and Hobby is"+hobby);
+     }
+	
+}
+
+
+public class Turtle {
+	public static void main(String[] args) {
+        Person p1 = new Person("Stark",32,"Saving America");
+//        Here we getting values from Object directly.
+       p1.getValueFromObject();
+       
+//       Here we getting values from This reference.
+       p1.getValueFromThis();
+       
+		
+	    } 
+	}
+
+
+
+
+
+
+
+
+
+3.
+The type of variables supported in java are :
+a)Local : declared within Methods.
+b)instance : common within classes for all methods.
+c)static : memory intialised only once and later modified.
+d)final : the variable remains constant through the program.
+
+
+
+4.
+Constructor : these are used to initalise memory.these are called automatically whenever object is created. these are used to give default values or user oriented values
+as per need. these are of two types - default and parameterised constructor. Constructor are associated with classes. they have well defined keyword that are used only 
+with , which this and super. they do not return any thing just used for the decalaration.
+
+Usage along with example :-
+
+
+class Person{
+	 String name;
+         int age;
+         String hobby;
+	public Person(String name, int age, String hobby) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.hobby = hobby;
+	}
+}
+public class Turtle {
+	public static void main(String[] args) {
+        Person p1 = new Person("Stark",32,"Saving America");	
+	    } 
+	}
+In this example in class Person constructor is called in main method which was called automatically when Person object p1 is initalised and with constructor
+the variable name, age and hobby are defined as we passed the values in parameter through constructor.
+
+
+
+
+
+
+5. Here is the program how static content(static methods,blocks,main method,non static methods,class level blocks etc) executes :
+
+
+
+ package Tut;
+public class Rabbit {
+	
+static {
+	System.out.println("Static is called !");
+}
+
+static void method1() {
+	System.out.println("Static Method 1 is called !");
+}
+
+
+   Rabbit(){
+	   System.out.println("Constructor is called !");
+   }
+	
+    {
+	System.out.println("Class level block is called !");
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//        directMethod2();
+//        
+		new Rabbit().method1();
+		{
+			System.out.println("main level block is called !");
+		}	
+	}
+}
+
+
+
+
+
+
+
+6.
+public class River {
+ public static void main(String[] args) {
+	 Scanner sc =new Scanner(System.in);
+	 int year = sc.nextInt();
+	 boolean ans = (year%400 ==0)? true : (year%4==0)? (year%100!=0):false ?true :false;
+	 
+	 if(ans) {
+       System.out.println("The given year is Leap year");
+	 }else {
+		 System.out.println("The given year is Not a Leap year"); 
+	 }
+ }
+}
+
+
+
+
+
+
+7.
+
+public class River {
+ public static void main(String[] args) {
+	 Scanner sc =new Scanner(System.in);
+	 char a = sc.next().charAt(0);
+	 boolean ans = ((a<'Z' && a>'A') || (a<'z' && a>'a'))? true :false;
+	 if(ans) {
+	       System.out.println("The Character is a Aplhabet");
+		 }else {
+			 System.out.println("The Character is a Not Aplhabet"); 
+		 }
+ }
+}
+
+
+
+
+
+8.
+public class River {
+ public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+     System.out.println("Enter value of P");
+     double a = sc.nextInt();
+      System.out.println("Enter value of R");
+      double b = sc.nextInt();
+      System.out.println("Enter value of T");
+      double c = sc.nextInt();
+      double ci = a*(Math.pow((1+b/100),c))-a;
+      System.out.println("Compound interest is "+ci);
+ }
+}
+
+
+
+
+9.
+
+public class River {
+ public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+     int a = sc.nextInt();
+     int b = sc.nextInt();
+     int c = sc.nextInt();
+     int max = (a>b)? ((a>c)?a:c):((b>c)?b:c);
+     System.out.println(max);
+ }
+}
+
+
+
+
+
+10.
+public class River {
+ public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+    char a = sc.next().charAt(0);
+    if(a<'Z' && a>'A') {
+    	System.out.println("Character is Uppercase !");
+    }else if(a<'z' && a>'a') {
+    	System.out.println("Character is Lowercase !");
+    }else {
+    	System.out.println("Invalid Character!");
+    }
+    
+ }
+}
+
+
+
+
+
+11.
+public class River {
+ public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+     double a = sc.nextDouble();
+     double b = sc.nextDouble();
+     double c = sc.nextDouble();
+     double finder = (b*b)-(4*a*c);
+     if(finder >0) {
+    	 System.out.println("First value is"+ (-b+Math.sqrt(finder))/(2*a)  );
+    	 System.out.println("Second value is"+ (-b-Math.sqrt(finder))/(2*a) );
+     }else if(finder==0) {
+    	 System.out.println("The value is"+ (-b+Math.sqrt(finder))/(2*a)  );
+     }
+ }
+}
+
+
+
+
+
+
+
+12.
+public class River {
+ public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
+     int a = sc.nextInt();
+     int b=a;
+     int i=2;
+    
+     while(i<b) {
+    	 while(b%i==0) {
+    		 System.out.println(i);
+    		 b=b/i;
+    	 }
+    	 i++;
+     }
+     if(i>2) {
+    	 System.out.println(b);
+     }   
+ }
+}
+
+
+
+
+
+
+13.
+
+public class River {
+ public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+     int n =sc.nextInt();
+     for(int i=0;i<n;i++) {
+    	 if(isArtrong(i) ) {
+    		 System.out.println(i);
+    	 }
+     }
+ }
+ 
+  static boolean isArtrong(int n) {
+	 int s=n;
+	 int number=0;
+	 int end =0;
+	 int total=0;
+	 while(s>0) {
+		 s= s/10;
+		 number++;
+	 }
+	 s=n;
+	 while(s>0) {
+	   end=s%10;
+	   total += (Math.pow(end,number));
+	   s=s/10;
+	 }
+	 
+	 if(n==total) {
+		 return true;
+	 }else {
+		 return false;
+	 }
+	
+	 }	 
+}
+
+
+
+
+
+
+14.
+public class River {
+ public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+     String a = sc.next();
+     System.out.println("The decimal value is :" + Integer.parseInt(a,16));
+ 
+ }
+}
+
+
+
+
+15.
+
+public class River {
+ public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
+     int a =sc.nextInt();
+     int b = sc.nextInt();
+     int i=1;
+     int hcf =1;
+     
+     
+     while(i<=a && i<=b) {
+    	 if(a%i==0 && b%i==0) {
+    		 hcf =i;
+    	 }
+    	 ++i;
+     }
+     int lcm = (a*b)/hcf;
+     
+     System.out.println(" HCF is "+hcf+" and LCM is "+lcm);
+ }
+}
+
+
+
+16.
+
+public class River {
+ public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+     double a = sc.nextDouble();
+     double b = sc.nextDouble();
+     double c = sc.nextDouble();
+     double finder = (b*b)-(4*a*c);
+     
+     
+     int q=0;
+     if(finder >0) {
+    	q=0;
+     }else if(finder==0) {
+    	 q=1;
+     }
+     
+     
+     switch(q) {
+     case 0:
+    	 System.out.println("First value is"+ (-b+Math.sqrt(finder))/(2*a)  );
+    	 System.out.println("Second value is"+ (-b-Math.sqrt(finder))/(2*a) );
+    	 break;
+     case 1 :
+    	 System.out.println("The value is"+ (-b+Math.sqrt(finder))/(2*a)  );
+     }
+     
+     
+     
+     
+ }
+}
+
+
+
+
+
+
+17.
+public class River {
+ public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+     int[] arr1 = {10,20,30,40,50,90};
+//     This is the given Array.
+     
+     
+//     Now will take another array of same size.
+     int[] arr2 =new int[arr1.length];
+     for(int i=0;i<arr2.length;i++) {
+    	 arr2[i]=arr1[i];
+     }
+     
+     
+//     Printing the values from Array 2 (arr2).
+     for(int i=0;i<arr2.length;i++) {
+        System.out.println(arr2[i]);
+     }
+     
+ }
+}
+
+
+
+
+
+18.
+
+public class River {
+ public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
+     int[] arr1 = {10,20,30,40,50,90};
+    
+     System.out.println("Enter the position to be deleted.");
+     int a = sc.nextInt();
+     
+     
+     
+     
+     for(int i=a;i<arr1.length-1;i++) {
+         arr1[i]=arr1[i+1];
+      }
+     
+     for(int i=0;i<arr1.length-1;i++) {
+         System.out.println(arr1[i]);
+      }
+ }
+}
+
+
+
+
+19.
+public class River {
+ public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+     int[] arr1 = {10,20,30,40,50,90,20,30};
+     
+     Arrays.sort(arr1);
+     for(int i=0;i<arr1.length;i++) {
+    	 for(int j=i+1;j<arr1.length;j++) {
+    		 if(arr1[i]==arr1[j]) {
+    			 deleteElement(arr1,j);
+    		 }
+    	 }
+     }
+     
+     for(int i=0;i<arr1.length-1;i++) {
+         System.out.println(arr1[i]);
+      }
+    
+ }
+ 
+ 
+ public static void deleteElement(int[] arr1,int a) {
+	 int i;
+	 for( i=a;i<arr1.length-1;i++) {
+         arr1[i]=arr1[i+1];
+     }
+	 arr1[i]=0;   
+ }
+}
+
+
+
+
+
+
+20.
+public class River {
+ public static void main(String[] args) {
+int[] arr1 = {10,20,30,40,50,90,20,30,111};
+	 int e1=0;
+	 int o1=0;
+	 
+	 for(int i=0;i<arr1.length;i++) {
+		 if(arr1[i]%2==0) {
+			 e1++;
+		 }else {
+			 o1++;
+		 }
+	 }
+	 
+	 int[] even = new int[e1];
+	 int[] odd = new int[o1];
+	 
+	 e1=0;
+	 o1=0;
+	 
+	 for(int i=0;i<arr1.length;i++) {
+		 if(arr1[i]%2==0) {
+			 even[e1]=arr1[i];
+			 e1++;
+		 }else {
+			 odd[o1]=arr1[i];
+			 o1++;
+		 }
+	 }
+	 
+	 for(int i=0;i<even.length;i++) {
+		 System.out.println("Even Number are : "+even[i]);
+	 }
+	 System.out.println("---");
+	 
+	 for(int i=0;i<odd.length;i++) {
+		 System.out.print("Even Number are : "+odd[i]);
+	}	 
+ } 
+}

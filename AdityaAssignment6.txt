@@ -1,0 +1,291 @@
+1. 
+Compile time polymorphism (Static polymorphism) : It is implemented via Method overloading. If we have class with same name method but with different
+parameters then the method call will depending upon the agruments passed and it is done through overloading the methods while compiling the code.
+It is fast but less easy to implement with high complexity.
+
+Example : 
+
+package Tut;
+
+ class L {
+int x = 20;
+  void shown() {
+	  System.out.println("1st method");
+  }
+  
+  void shown(int a,int b) {
+	  System.out.println(a+b);
+  }
+}
+ 
+
+public class River {
+public static void main(String[] args)
+{
+   L l1 = new L();
+   l1.shown();
+   l1.shown(2,3);
+}
+}
+
+
+
+
+
+
+2. Run time polymorphism (Dynamic polymorphism) : It is implemented via Method overridding. If we have two class A and class B with same method then
+depending upon the constructor called and object intialiasation that will method will get executed. It is done in run time rather than compile time 
+as method get executed at a runtime only. It is less faster than compile time but easy to implement and is of less complexity.
+
+Example :
+
+package Tut;
+
+ class L {
+
+  void shown() {
+	  System.out.println("L method is called.");
+  }
+  
+ 
+}
+ 
+ 
+ class P extends L{
+	 void shown() {
+		  System.out.println("P method is called");
+	  }
+ }
+ 
+
+public class River {
+public static void main(String[] args)
+{
+   L l1 = new L();
+   l1.shown();
+   L l2 = new P();
+   l2.shown();
+}
+}
+
+
+
+
+
+
+
+
+3.
+Yes there are errors in the following code and hence code will not compile successfully. 
+
+class A {
+String m1(String x){
+System.out.println("One");
+return "ABC";
+}
+String m1(String y){
+System.out.println("Two");
+return "PQR";
+}
+public static void main(String[] args){
+A a = new A();
+a.m1("ABC");
+}
+}
+
+Since there is same method within a class with same parameter and attributes so there will be no method overloading and hence Compile time 
+polymorphism will not take place. There will be a compilatation error in order to correct our code we need to change either method name or
+method's parameters passed. 
+Like the following code :
+
+class A {
+String m1(String x){
+System.out.println("One");
+return "ABC";
+}
+String m2(String y){
+System.out.println("Two");
+return "PQR";
+}
+public static void main(String[] args){
+A a = new A();
+a.m1("ABC");
+a.m2("BCD");
+}
+}
+
+
+
+
+
+
+4.
+Yes the code will get compiled successfully.
+
+package Tut;
+class A {
+void m1(A a){
+System.out.println("m1 method in class A");
+}
+}
+class B extends A {
+public void m1(A a){
+System.out.println("m1 method in class B");
+}
+}
+
+
+public class River {
+	  
+public static void main(String[] args)
+{
+	
+	A a = new A();
+	
+	a.m1(a);
+	a.m1(new B());
+	B b = new B();
+	b.m1(null);
+	a = b;
+	a.m1(null);
+	a.m1(new A());
+}
+}
+
+
+Yes here is the output of the program  :
+
+// a.m1(a); Output
+m1 method in class A
+
+// a.m1(new B()); Output
+m1 method in class A
+
+// b.m1(null); Output
+m1 method in class B
+
+// a.m1(null); Output
+m1 method in class B
+
+// a.m1(new A());
+m1 method in class B
+
+
+
+
+5. 
+The types of binding in java are types of polymorphism which is :
+a) Static (Compiletime polymorphism) : Compile time polymorphism (Static polymorphism) : It is implemented using Method overloading. If we have class
+with same name method but with different parameters then the method call will depending upon the agruments passed and it is done through 
+overloading the methods while compiling the code. It is fast but less easy to implement with high complexity.
+
+Example : 
+
+package Tut;
+
+ class A {
+  void given() {
+	  System.out.println("A method is called");
+  }
+  
+  void given(int a,int b) {
+	  System.out.println(a+b);
+  }
+}
+
+
+b) Dynamic (Runtime polymorphism) : Run time polymorphism (Dynamic polymorphism) : It is implemented using Method overridding. If we have two class A and class B with same method then
+depending upon the constructor called and object intialiasation that will method will get executed. It is done in run time rather than compile time 
+as method get executed at a runtime only. It is less faster than compile time but easy to implement and is of less complexity.
+
+Example :
+
+package Tut;
+
+ class C {
+
+  void display() {
+	  System.out.println("C method is called.");
+  }
+  
+ 
+}
+ 
+ 
+ class D extends C{
+	 void display() {
+		  System.out.println("D method is called");
+	  }
+ }
+ 
+
+public class River {
+public static void main(String[] args)
+{
+   C c1 = new C();
+   c1.display();
+   D d2 = new D();
+   d2.display();
+}
+}
+
+
+
+
+
+
+6. We need final keyword in Java because while coding we need some variables or methods to be constant. Like for variables we need them as constant 
+throughout the program so we use final keyword. With method when we need methods to not to get overidded or want them with constant functionlaity we 
+final keyword with methods. lastly for agruments and class when we want no extension in classes or changes in arguments we use final keyword 
+with classes and arguments.
+
+
+
+
+7.
+
+public class River {
+	private final int x = 10;
+	void m1()
+	{
+	final int x = 20;
+	System.out.println(x);
+	}
+	
+	void m2()
+	{
+		System.out.println(x);
+	}
+public static void main(String[] args)
+{
+	
+	River obj = new River();
+	obj.m1();
+	obj.m2();
+}
+}
+
+Since within method m1 there will be different declaration and referecning to variable x and that ibje executation will give that's method x values 
+and if we call the values of x directly without any new declaration then we will get the previous values of x declared in class.
+
+
+Output :
+20
+10  
+
+
+
+
+8.
+Blank final variable in Java is a declared but not initalised variable. If it is declared then it should be initilised only in constructor.
+Example :
+public class River {
+	
+public static void main(String[] args)
+{
+	
+	final int u;
+	u=-10;
+	System.out.println(u);
+}
+}

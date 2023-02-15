@@ -1,0 +1,96 @@
+1.
+public static void main(String[] args) {
+	try {
+		int a = 5/0;
+	}catch(Exception ArithmeticException ) {
+		System.out.println("ArithmeticException has occured");
+	}
+}
+}
+
+
+
+2.
+public static void main(String[] args) throws Exception {
+	Scanner sc = new Scanner(System.in);
+	try {
+		int b = sc.nextInt();
+		int a = 5/b;
+	}catch(ArithmeticException e) {
+		System.out.println("ArithmeticException has occured");
+	}
+	catch(InputMismatchException e) {
+		System.out.println("InputMismatchException has occured");
+	}
+	catch(Exception e) {
+		throw e;
+	}
+}
+}
+
+
+
+3.
+public static void main(String[] args) throws Exception {
+	Scanner sc = new Scanner(System.in);
+	try {
+		int b = sc.nextInt();
+		int a = 5/b;
+		}
+
+	catch (ClassNotFoundException e) {
+		throw e;
+	}
+	catch(IOException e) {
+		throw e;
+	}
+	
+	catch(Exception e) {
+		throw e;
+	}
+	
+}
+}
+
+
+
+
+4.
+public static void main(String[] args) throws Exception {
+	Scanner sc = new Scanner(System.in);
+	try {
+		int b = sc.nextInt();
+		int a = 5/b;
+	}
+	catch(InputMismatchException e) {
+		throw e;
+	}catch(Exception e) {
+		throw e;
+	}
+}
+}
+
+
+
+
+5.
+
+public static void main(String[] args) throws Exception {
+	Scanner sc = new Scanner(System.in);
+	try {
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c =a/b; 
+		System.out.println(c);
+	}
+	catch(InputMismatchException e) {
+		System.out.println("InputMismatchException");
+	}
+	catch(NumberFormatException e) {
+		throw e;
+	}
+	catch(Exception e) {
+		System.out.println(e);
+	}	
+}
+}

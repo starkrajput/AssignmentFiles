@@ -1,0 +1,589 @@
+1.
+
+class Folder{
+	void createFile() {
+		try {
+			File f = new File("D:\\two.txt");
+			f.createNewFile();
+		}
+		catch(Exception e) {
+		}
+	}
+	
+	void writeData(String writeItHere) {
+		try {
+			FileOutputStream fis = new FileOutputStream("D:\\two.txt");
+			String data = writeItHere;
+			byte[] arr = data.getBytes();
+			DataOutputStream dos = new DataOutputStream(fis);
+			dos.write(arr);			
+		}
+		catch(Exception e) {
+		}
+	}
+}
+public class Rabbit {
+public static void main(String[] args){
+	
+	Folder f = new Folder();
+	f.createFile();
+	f.writeData("What is it !");
+}
+}
+
+
+
+
+
+
+
+2.
+class Folder{
+		void readData() {
+		try {
+			FileInputStream fis = new FileInputStream("D:\\two.txt");
+			DataInputStream dis = new DataInputStream(fis);
+			InputStreamReader isr = new InputStreamReader(dis);
+			BufferedReader bre = new BufferedReader(isr);
+			String data  ;
+			while((data =bre.readLine())!=null) {
+				System.out.println(data);
+			}	
+		}
+		catch(Exception e) {
+		}
+	}
+}
+public class Rabbit {
+public static void main(String[] args){
+	Folder f = new Folder();
+	f.readData();	
+}
+}
+
+
+
+
+
+
+
+3.
+package Tut;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Scanner;
+
+
+
+class Folder{
+	String readData(String path) {
+		String datas="";
+		try {
+			FileInputStream fis = new FileInputStream(path);
+			DataInputStream dis = new DataInputStream(fis);
+			InputStreamReader isr = new InputStreamReader(dis);
+			BufferedReader bre = new BufferedReader(isr);
+			String data  ;
+			while((data =bre.readLine())!=null) {
+				datas+=data;
+//				System.out.println(data);
+			}	
+			
+		}
+		catch(Exception e) {
+		}
+		return datas;
+	}
+	
+	
+	
+	void createFile(String path) {
+		try {
+			File f = new File(path);
+			f.createNewFile();
+		}
+		catch(Exception e) {
+		}
+	}
+	
+	void writeData(String path,String datas) {
+		try {
+			FileOutputStream fis = new FileOutputStream(path);
+			String data = datas;
+			byte[] arr = data.getBytes();
+			DataOutputStream dos = new DataOutputStream(fis);
+			dos.write(arr);			
+		}
+		catch(Exception e) {
+		}
+	}
+
+}
+
+
+
+public class Rabbit {
+	
+	public static boolean isPrime(String p) {
+		 int s = Integer.parseInt(p);
+		 System.out.println(s);
+		 for(int i=2;i*i<=s;i++) {
+			 if(s%i==0) {
+				 return false;
+			 }
+			 
+		 }
+		 return true;
+	}
+public static void main(String[] args){
+	
+	Folder f = new Folder();
+	String ques = f.readData("D:\\two.txt");
+
+	String even  = "";
+	String odd   = "";
+	String prime = "";
+	for(int i=0;i<ques.length();i++) {
+		if((ques.charAt(i))%2==0) {
+			even+=ques.charAt(i);
+		}
+		if((ques.charAt(i)%2)!=0) {
+			odd+=ques.charAt(i);
+		}
+		if(isPrime(ques.charAt(i)+"")) {
+			prime+=ques.charAt(i);
+		}
+	}
+	System.out.println(even);
+	System.out.println(odd);
+	System.out.println(prime);
+	Folder mainFile = new Folder();
+	mainFile.createFile("D:\\Even.txt");
+	mainFile.writeData("D:\\Even.txt","Sssgsg");
+	mainFile.createFile("D:\\Odd.txt");
+	mainFile.writeData("D:\\Odd.txt",odd);
+	mainFile.createFile("D:\\Prime.txt");
+	mainFile.writeData("D:\\Prime.txt",prime);
+}
+}
+
+
+
+
+
+4.
+public static void main(String[] args) throws Exception{
+	String data = "AddedData";
+	String path = "D:\\appendFile.txt";
+	File f = new File(path);
+	f.createNewFile();
+		try {
+			FileOutputStream fis = new FileOutputStream(path);
+			
+			byte[] arr = data.getBytes();
+			DataOutputStream dos = new DataOutputStream(fis);
+			dos.write(arr);			
+		}
+		catch(Exception e) {
+		}
+		data = "NEWADDED";
+     	FileOutputStream fos = new FileOutputStream("D:\\appendFile.txt", true);
+		fos.write(data.getBytes());
+
+	
+}
+}
+
+
+
+
+
+
+5.
+public static void main(String[] args) throws Exception{
+	     BufferedReader file1 = new BufferedReader(new FileReader("one.txt"));
+			BufferedReader file2 = new BufferedReader(new FileReader("one.txt"));
+			if(file1 ==file2) {
+				System.out.println(true);
+			}else {
+				System.out.println(false);
+			}
+}
+}
+
+
+
+
+6.
+public static void main(String[] args) throws Exception{
+	try {
+		File f = new File("D:\\I.txt");
+		f.createNewFile();
+	}
+	catch(Exception e) {
+	}
+	
+	try {
+		File f = new File("D:\\F.txt");
+		f.createNewFile();
+	}
+	catch(Exception e) {
+	}
+	 String sfile = "D:\\I.txt";  
+	
+	  String dfile = "D:\\F.txt";  
+	  FileReader fin = new FileReader(sfile);  
+	  FileWriter fout = new FileWriter(dfile, true);  
+	  int c;  
+	  while ((c = fin.read()) != -1) {  
+	   fout.write(c);  
+	  }  
+	  System.out.println("Copy finish...");  
+	  fin.close();  
+	  fout.close();  
+}
+}
+
+
+
+
+
+
+
+7.
+public static void main(String[] args) throws Exception{
+	PrintWriter pw = new PrintWriter("file3.txt");
+    
+    // BufferedReader object for file1.txt
+    BufferedReader br = new BufferedReader(new FileReader("file1.txt"));
+      
+    String line = br.readLine();
+      
+    // loop to copy each line of 
+    // file1.txt to  file3.txt
+    while (line != null)
+    {
+        pw.println(line);
+        line = br.readLine();
+    }
+      
+    br = new BufferedReader(new FileReader("file2.txt"));
+      
+    line = br.readLine();
+      
+    // loop to copy each line of 
+    // file2.txt to  file3.txt
+    while(line != null)
+    {
+        pw.println(line);
+        line = br.readLine();
+    }
+}
+}
+
+
+
+
+
+8.
+public static void main(String[] args) throws Exception{
+	Folder f = new Folder();
+	String path = "D:\\\\8th.txt";
+	f.createFile(path);
+	f.writeData(path, "djdsdjdjdjddjd dnddj");
+	String data = f.readData(path);
+//	System.out.println(data);
+	char[] datachar = data.toCharArray();
+//	System.out.println(datachar.length);
+	int characters = 0;
+	int words = 0;
+	int lines = data.split("[\n|\r]").length;;
+	for(int i=0;i<datachar.length;i++){
+		if((data.charAt(i)>='a' && data.charAt(i)<='z') || (data.charAt(i)>='A' && data.charAt(i)<='Z') ) {
+			characters++;
+		}
+	}
+	for(String s : data.split(" ")) {
+		words++;
+	}
+	System.out.println("Character are : " + characters+" and words are "+words+"and lines are "+lines);
+}
+}
+
+
+
+
+
+
+9.
+public static void main(String[] args) throws Exception{
+	Folder f = new Folder();
+	String path = "D:\\test.txt";
+	f.createFile(path);
+	f.writeData(path, "djdsdjdjdjddjd anything dnddj");
+	String data = f.readData(path);
+	String datas = data.replaceAll("anything", "");
+//	System.out.println(data);
+	new FileWriter(path, false).close();
+	try {
+		FileWriter fw = new FileWriter(path);
+		fw.write(datas);
+		fw.close();
+	}catch(IOException e) {
+		throw e;
+	}
+}
+}
+
+
+
+
+10.
+public static void main(String[] args) throws Exception{
+	File sr = new File("D:\\source.txt"); 
+	File des = new File("D:\\dest.txt"); 
+	 
+	BufferedReader reader = new BufferedReader(new FileReader(sr)); 
+	BufferedWriter writer = new BufferedWriter(new FileWriter(des)); 
+	 
+	String lineToRemove = "Line3 will be removed."; 
+	String currentLine; 
+	 
+	while((currentLine = reader.readLine()) != null) { 
+	     String trimmedLine = currentLine.trim();
+	    if(trimmedLine.equals(lineToRemove)) continue;
+	    writer.write(currentLine + System.getProperty("line.separator")); 
+	} 
+}
+}
+
+
+
+
+11.Doubt:
+public static void main(String[] args) throws Exception{
+    Scanner file;
+    PrintWriter writer;
+    try {
+        file = new Scanner(new File("D:\\source.txt")); 
+        writer = new PrintWriter("D:\\dest.txt"); 
+        while (file.hasNext()) {
+            String line = file.nextLine();
+            if (!line.isEmpty()) {
+                writer.write(line);
+                writer.write("\n");
+            }
+        }
+        file.close();
+        writer.close();
+    }
+    catch(Exception e) {
+    	throw e;
+    }
+}
+}
+
+
+
+
+12.
+public static void main(String[] args) throws Exception{
+	Folder f = new Folder();
+	String path = "D:\\test.txt";
+	f.createFile(path);
+	f.writeData(path, "djdsdjdjdjddjd anything  Hey dnddj");
+	String data = f.readData(path);
+	String match = "Hey";
+	 boolean ans  = false;
+	 for(String s : data.split(" ")) {
+		 if(s.equals(match))
+		    ans = true;
+	 }
+     System.out.println(ans);
+	}
+}
+
+
+
+
+
+13.
+public static void main(String[] args) throws Exception{
+	Folder f = new Folder();
+	String path = "D:\\test.txt";
+	f.createFile(path);
+	f.writeData(path, "djdsdjdjdjddjd anything Hey Hey dnddj");
+	String data = f.readData(path);
+	String wordstoMatch= "Hey";
+	int wordsEncountered=0;
+	 for(String s : data.split(" ")) {
+		 if(s.equals(wordstoMatch))
+		 wordsEncountered++;
+	 }
+     System.out.println(wordsEncountered);
+	}
+}
+
+
+
+
+14.
+public static void main(String[] args) throws Exception{
+	Folder f = new Folder();
+	String path = "D:\\test.txt";
+	f.createFile(path);
+	f.writeData(path, "djdsdjdjdjddjd anything dnddj");
+	String data = f.readData(path);
+	int wordsCount=0;
+	 for(String s : data.split(" ")) {
+		 
+		 wordsCount++;
+	 }
+     System.out.println(wordsCount);
+	}
+}
+
+
+
+
+
+
+15.
+public static void main(String[] args) throws Exception{
+	Folder f = new Folder();
+	String path = "D:\\test.txt";
+	f.createFile(path);
+	f.writeData(path, "djdsdjdjdjddjd anything dnddj");
+	String data = f.readData(path);
+	String datas = data.replace("anything", "NewName");
+//	System.out.println(data);
+	new FileWriter(path, false).close();
+	try {
+		FileWriter fw = new FileWriter(path);
+		fw.write(datas);
+		fw.close();
+	}catch(IOException e) {
+		throw e;
+	}
+}
+}
+
+
+
+
+16.
+public static void main(String[] args) throws Exception{
+	 Scanner file;
+	    PrintWriter writer;
+	    try {
+	        file = new Scanner(new File("D:\\source.txt")); 
+	        writer = new PrintWriter("D:\\dest.txt"); 
+	        String lines = "ss";
+	        while (file.hasNext()) {
+	            String line = file.nextLine();
+	            if (!line.isEmpty()) {
+	            	
+	                if(!line.equals(lines)) {
+	                	writer.write(line);
+		                writer.write("\n");
+	                }
+	            }
+	        }
+	        file.close();
+	        writer.close();
+	    }
+	    catch(Exception e) {
+	    	throw e;
+	    }
+}
+}
+
+
+
+
+
+
+17.
+public static void main(String[] args) throws Exception{
+	 FileInputStream fs = new FileInputStream("D:\\readProgram.java");
+	 DataInputStream ds = new DataInputStream(fs);
+	 BufferedReader br = new BufferedReader(new InputStreamReader(ds));
+	 String s = "";
+	 while((s=br.readLine())!=null) {
+		 System.out.println(s);
+		 }
+	 }
+}
+
+
+
+
+
+18.
+public static void main(String[] args) throws Exception{
+	Folder f = new Folder();
+	String path = "D:\\test.txt";
+	f.createFile(path);
+	f.writeData(path, "djdsdjdjdjddjd ANYthing dnddj");
+	String data = f.readData(path);
+	String datas  = "";
+	for(char c : data.toCharArray()) {
+		if((c>='a' && c<='z')  ) {
+			datas+=(c+"").toUpperCase();
+		}else if(c>='A' && c<='Z') {
+			datas+=(c+"").toLowerCase();
+		}
+	}
+	new FileWriter(path, false).close();
+	try {
+		FileWriter fw = new FileWriter(path);
+		fw.write(datas);
+		fw.close();
+	}catch(IOException e) {
+		throw e;
+	}
+
+
+
+
+}
+}
+
+
+
+
+
+19.
+public static void main(String[] args) throws Exception{
+	    String path = "D:\\test.txt";
+		File f = new File(path);
+		f.createNewFile();
+		Path paths = FileSystems.getDefault().getPath(path);
+		BasicFileAttributeView view = Files.getFileAttributeView(  paths, BasicFileAttributeView.class);
+        BasicFileAttributes attribute = view.readAttributes();
+	    System.out.println(attribute.lastAccessTime());
+	    System.out.println(attribute.lastModifiedTime());	
+}
+}
+
+
+
+
+20.
+public static void main(String[] args) throws Exception{
+	        String path = "D:\\test.txt";
+		File f = new File(path);
+		f.createNewFile();
+		System.out.println(f.exists());
+	    
+}
+}

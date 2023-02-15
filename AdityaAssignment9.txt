@@ -1,0 +1,260 @@
+1.
+public class River {
+public static void main(String[] args)
+{
+	Scanner sc = new Scanner(System.in);
+	int n = sc.nextInt();
+	System.out.println("fahrenheit value is "+ ((n*9/5)+32));
+}
+}
+
+
+
+
+2.
+public class River {
+public static void main(String[] args)
+{
+	Scanner sc = new Scanner(System.in);
+	int n = sc.nextInt();
+	System.out.println("circumference is "+ (2*(3.14)*n)+ "and area of a circle "+ ((3.14)*n*n) );
+}
+}
+
+
+
+
+
+
+3.
+public class River {
+public static void main(String[] args)
+{
+	Scanner sc = new Scanner(System.in);
+//	int n = sc.nextInt();
+	for(int i=100;i<151;i++) {
+		if(isEven(i)) {System.out.println(i);}
+	}
+}
+
+
+public static boolean isEven(int a) {
+	13
+	int total =0;
+	while(a!=0) 
+	{
+		total += a%10;
+		a=a/10;
+	}
+	if(total%2==0) {
+		return true;
+	}
+	return false;
+}
+}
+
+
+
+
+
+
+
+
+
+
+4.
+public class Rabbit {
+public static void main(String[] args){
+	
+			 Scanner sc = new Scanner(System.in);
+		     double a = sc.nextDouble();
+		     double b = sc.nextDouble();
+		     double c = sc.nextDouble();
+		     double finder = (b*b)-(4*a*c);
+		     if(finder >0) {
+		    	 System.out.println("First value is"+ (-b+Math.sqrt(finder))/(2*a)  );
+		    	 System.out.println("Second value is"+ (-b-Math.sqrt(finder))/(2*a) );
+		     }else if(finder==0) {
+		    	 System.out.println("The value is"+ (-b+Math.sqrt(finder))/(2*a)  );
+		     }
+		   
+}
+}
+
+
+
+
+
+
+5.
+public class Rabbit {
+public static void main(String[] args){
+	
+			 Scanner sc = new Scanner(System.in);
+		    int n = sc.nextInt();
+		    recMethod(n);
+		    
+}
+
+public static void recMethod(int n) {
+	if(n<0) {
+		return;
+	}
+	System.out.println(n);
+	recMethod(n-1);
+	
+}
+}
+
+
+
+
+
+
+6.
+public class Rabbit {
+public static void main(String[] args){
+	
+			 Scanner sc = new Scanner(System.in);
+			 System.out.println("Value of n");
+		    int n = sc.nextInt();
+		    System.out.println("Value of power");
+		    int n2 = sc.nextInt();
+		    int ans=1;
+		    for(int i=0;i<n2;i++) {
+		    	ans *=n;
+		    }
+		    System.out.println(ans);
+		    
+}
+
+
+}
+
+
+
+
+
+
+7.
+public class Rabbit {
+public static void main(String[] args){
+	
+			 Scanner sc = new Scanner(System.in);
+			 String ans;
+		    do {
+		    	System.out.println("Types the number !");
+		    	int n = sc.nextInt();
+			    int n2 = sc.nextInt();
+			    System.out.println(n+n2);
+			    System.out.println("Do you want to do it again ! if its YES type YES");
+			     ans = sc.next();
+		    }while(ans.equals("yes") || ans.equals("YES") );
+		    
+		    System.out.println("Program Ended");
+		    
+}
+}
+
+
+
+
+
+
+
+8.
+public class Rabbit {
+public static void main(String[] args){
+	
+			 Scanner sc = new Scanner(System.in);
+			 System.out.println("Pass the numbers ");
+			 NumberChecking(12,11,22,33,44,55,66);
+		    
+		    
+		    
+}
+public static void NumberChecking(int... nums) {
+	int max = Integer.MIN_VALUE;
+	int min = Integer.MAX_VALUE;
+	for(int s :nums) {
+		if(s>max) {
+			max= s;
+		}
+		if(s<min) {
+			min=s;
+		}
+	}
+	System.out.println("Max value is "+max+" Min value is "+min);
+}
+
+}
+
+
+
+
+9.
+
+public class Rabbit {
+public static void main(String[] args){
+	
+			 Scanner sc = new Scanner(System.in);
+			 System.out.println("Enter the Highest number ");
+			 int max = sc.nextInt();
+			 System.out.println("Enter the Lowest Number");
+			 int min = sc.nextInt();
+			 int randomNumber =(int) Math.random()*(max-min)+min;
+			 System.out.println("Guess a number between your max and min ");
+		     int n = sc.nextInt();
+		     do {
+		    	 if(n>randomNumber) {
+			    	 System.out.println(" Input is Too High !");
+			    	 n = sc.nextInt();
+			     }else if(n==randomNumber) {
+			    	 System.out.println(" Congraulation buddy !");
+			    	 
+			    	 System.exit(0);;
+			     }else if(n<randomNumber) {
+			    	 System.out.println("Input is Too Low !");
+			    	  n = sc.nextInt();
+			     }else {
+			    	 System.out.println("Invalid Input !");
+			    	  n = sc.nextInt();
+			     }
+		     }while(true );
+		     
+		    
+}
+
+
+}
+
+
+
+
+
+10.
+public class River {
+public static void main(String[] args)
+{    
+	 Scanner sc = new Scanner(System.in);
+	 System.out.println("Enter x");
+	 double x =sc.nextDouble();
+	 System.out.println("Enter n");
+	 int n = sc.nextInt();
+	 x = x * (Math.PI / 180.0);
+     
+     double ans = 1;
+     double rep = 1;
+     double fact = 1;
+     double pow = 1;
+     for (int i = 1; i < n; i++)
+     {
+         rep *= -1;
+         fact *= (2 * i - 1) *
+                            (2 * i);
+         pow *= x * x;
+         ans += rep * pow / fact;
+     }
+      System.out.println(ans);
+}
+

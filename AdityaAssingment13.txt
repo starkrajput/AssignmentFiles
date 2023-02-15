@@ -1,0 +1,225 @@
+1.
+public static void main(String[] args) throws Exception{
+	String s = "Hello, World";
+	int foo = 0;
+	int loo =0;
+	int foe = 0;
+	int loe =0;
+	for(int i=0;i<s.length();i++) {
+		if(s.charAt(i)=='o') {
+			foo=i;
+			break;
+		}	
+	}	
+	
+	for(int i=0;i<s.length();i++) {
+		if(s.charAt(i)==',') {
+			foe=i;
+			break;
+		}
+	}
+	
+	for(int i=s.length()-1;i>=0;i--) {
+		
+		if( s.charAt(i)=='o') {
+			loo = s.length()-i;
+			break;
+		}
+	}
+	
+	for(int i=s.length()-1;i>=0;i--) {
+	 if( s.charAt(i)==',') {
+		loe = s.length()-i;
+		break;
+	 }
+	}
+	System.out.println("o first occurance"+foo+" o last occurance"+loo+" , first occurance"+foe+" , last occurance"+loe);
+}
+}
+
+
+
+
+
+
+2.
+public static void main(String[] args) throws Exception{
+	Scanner sc = new Scanner(System.in);
+	String name = sc.nextLine();
+	String ans ="";
+	int i=0;
+	
+	for(String s: name.split(" ")) {
+		i++;
+		if(i<= name.split(" ").length-1) {
+			ans+=s.charAt(0);
+			ans+=".";
+		}else {
+		   ans+=s;
+		}
+		
+	}
+	
+	System.out.println(ans);
+}
+}
+
+
+
+
+
+3.
+public static void main(String[] args) throws Exception{
+	Scanner sc = new Scanner(System.in);
+	String name = sc.nextLine();
+	name = name.replaceAll(" ", "");
+	name.toLowerCase();
+	
+    int[] freq = new int[26];
+    for(char c : name.toCharArray()) {
+    	freq[(int) (c-'A'-31)]++;
+    }
+    System.out.println((int) ('a'-'A'-31));
+   int maxOccurance  = 0;
+   int i=1;
+   for(int n :freq) {  
+	   if(maxOccurance<n) {
+
+		maxOccurance = n;
+   	}
+    	System.out.println((char)(i+96) +"->"+n);
+   	i++;
+   	}
+    System.out.println("alphabet with maximum occurrence is "+maxOccurance);
+    
+//    System.out.println((char)(97));
+
+}
+}
+
+
+
+4.public static void main(String[] args) throws Exception{
+	Scanner sc = new Scanner(System.in);
+	String name = sc.nextLine();
+	name = name.replaceAll(" ", "_");
+	System.out.println(name);
+}
+}
+
+
+
+5.
+public static void main(String[] args) throws Exception{
+	Scanner sc = new Scanner(System.in);
+	String name = sc.nextLine();
+	boolean ans = name.contains("  ") || name.contains("   ") || name.contains("   ");
+	if(ans) {
+		System.out.println("Detected");
+	}else {
+		System.out.println("Not Detected");
+	}
+}
+}
+
+
+6.
+public static void main(String[] args) throws Exception{
+	Scanner sc = new Scanner(System.in);
+	String[] arr1 = {"abs","ahhs","sjkksois"};
+	String[] arr2 	= {"ssabs","ahsffhs","sjkswwksois"};	
+    String[] arr3 = new String[arr1.length+arr2.length];
+    int i=0;
+    for(String s :arr1) {
+    	arr3[i] = s;
+    	i++;
+    }
+    for(String s :arr2) {
+    	arr3[i] = s;
+    	i++;
+    }
+    for(String s :arr3) {
+    	System.out.print(s);
+    }
+
+}
+}
+
+
+
+
+
+7.
+public static void main(String[] args) throws Exception{
+	Scanner sc = new Scanner(System.in);
+	String s = sc.nextLine();
+	String ans = "";
+	String[] q = s.split(" ");
+	for(String p : q) {
+		
+			StringBuilder sb = new StringBuilder();
+			sb.append(p);
+			ans+= sb.reverse();
+		    ans+=" ";
+	}
+	System.out.println(ans);
+	
+}
+}
+
+
+
+
+
+8.
+public static void main(String[] args) throws Exception{
+	Scanner sc = new Scanner(System.in);
+	String s = sc.next();
+	String rev = "";
+	StringBuilder sb = new StringBuilder();
+	sb.append(s);
+	rev += sb.reverse().toString();
+	System.out.println(rev);
+   if(s.equals(rev)) {
+	   System.out.println("String is a Palindrome");
+   }else {
+	   System.out.println("String is a Not Palindrome");
+   }
+	
+	
+
+
+
+
+9.
+public static void main(String[] args) throws Exception{
+	Scanner sc = new Scanner(System.in);
+	String s = sc.nextLine();
+	s.trim();
+	String ans = "";
+	for(String q:s.split(" ")) {
+		ans+=q;
+	}
+	System.out.println(ans);
+	
+	
+}
+}
+
+
+
+
+
+
+10.
+public static void main(String[] args) throws Exception{
+	Scanner sc = new Scanner(System.in);
+	String s = sc.nextLine();
+	String[] arr = s.split(" ");
+	int ans  = 0;
+	for(String q:arr) {
+		ans++;
+	}
+	System.out.println(ans);
+}
+}
